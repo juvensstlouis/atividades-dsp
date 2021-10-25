@@ -9,7 +9,7 @@ class Produto(db.Model):
     def __str__(self):
         return f"id: {self.id}" + \
                f", descrição: {self.descricao}" + \
-               f", preço: R$ {self.preco:.2f}"
+               f", preço: {self.preco}"
 
     def json(self):
         return {
@@ -38,7 +38,3 @@ if __name__ == "__main__":
         print(p)
         print(p.json())
         print()
-
-
-
-

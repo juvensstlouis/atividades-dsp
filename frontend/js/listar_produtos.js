@@ -15,10 +15,17 @@ $(function () {
       var linha = "<tr>" +
                     "<td>" + produtos[i].id + "</td>" +
                     "<td>" + produtos[i].descricao + "</td>" +
-                    "<td>" + "R$ " + parseFloat(produtos[i].preco).toFixed(2) + "</td>" +
+                    "<td>" + formatarPreco(produtos[i].preco) + "</td>" +
                   "</tr>";
 
       $("#corpo-tabela-produtos").append(linha);
     }
+  }
+
+  function formatarPreco(preco) {
+    var precoFormatado = parseFloat(preco).toFixed(2);
+    precoFormatado = precoFormatado.replace('.', ',');
+    precoFormatado = "R$ " + precoFormatado;
+    return precoFormatado;
   }
 });
